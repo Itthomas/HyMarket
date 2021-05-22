@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Nunito&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(255, 251, 235);
+    color: rgb(80, 80, 80);
+}
+
+.nav_bar ul {
+    margin: 0px;
+}
+
+.nav_bar li {
+    display: inline;
+    padding: 1em;
+}
+
+.nav_bar {
+    text-align: center;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 248, 220, 0.301);
+}
+
+.nav_bar .nav_anchor {
+    color: cornsilk;
+    text-decoration: none;
+    margin: 3%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 27px;
+    display: inline-block;
+    border-radius: .3em;
+}
+
+.nav_bar a:hover {
+    color: whitesmoke;
+    background-color: rgba(72, 209, 205, 0.13);
+}
+
+#header_box {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    margin: 0px;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.144) url("images/skyblock_night_large.png") no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    background-blend-mode: multiply;
+    padding-bottom: 50px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.subtitle {
+    color: whitesmoke;
+}
+
+header h1 {
+    font-family: 'Days One', sans-serif;
+    font-size: 80px;
+    color: cornsilk;
+    text-align: center;
+    margin-top: 30px;
+}
+
+main {
+    padding: 50px;
+    margin: 20px;
+}
+
+.foot {
+    background-color: rgb(27, 27, 63);
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0px;
+    margin: 0;
+}
+
+.created_by, .disclaimer {
+    color: cornsilk;
+}
+
+.created_by {
+    padding-top: 30px;
+}
+
+.disclaimer {
+    padding: 7px;
+}
+
+.item_box {
+    border-radius: .3em;
+    border-width: 5px;
+    border-color: solid black;
+    background-color: rgb(158, 127, 88);
+    margin: 20px;
+    margin-inline: 11px;
+    height: 220px;
+    width: 220px;
+}
+
+.item_box:hover {
+    background-color: rgb(121, 101, 78);
+}
+
+.all_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.product_info_list {
+    list-style: none;
+    padding: .6em;
+    padding-top: 0;
+    text-decoration: none;
+}
+
+.product_info_list .product_info{
+    color: rgba(59, 56, 44, 0.877);
+    padding: auto;
+    margin: auto;
+    text-decoration: none;
+    font-style: normal;
+    text-decoration-color: rgb(121, 101, 78);
+}
+
+.item_name {
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-align: center;
+    border-bottom: 2px solid rgb(87, 70, 49);
+}
+
+.product_info .value {
+    float: right;
+}
+
+.overview_container {
+    width: 30%;
+    min-width: 240px;
+}
+
+.table_head {
+    font-size: 1.1em;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.orders {
+    background-color: rgb(231, 227, 208);
+    border-radius: .5em;
+    margin: 20px;
+    padding: 10px;
+}
+
+table {
+    margin: 5px;
+    margin-right: 5px;
+}
+
+.orders_container {
+    display: flex;
+}
+
+.price_row {
+    padding-right: 40px;
+}
+
+.order_row {
+    padding-left: 40px;
+}
+
+button {
+    height: 2.5em;
+    border-radius: .7em;
+    border: none;
+    background-color: rgb(104, 119, 133);
+    color: cornsilk;
+}
+
+button:hover {
+    background-color: rgba(104, 119, 133, 0.767);
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    height: 2.3em;
+    background-color: rgba(119, 136, 153, 0.308);
+    border-radius: .3em;
+}
+
+.home_body {
+    margin: 0px;
+    padding-bottom: 120px;
+    height: fit-content;
+    margin-bottom: 150px;
+}
+
+.float_child {
+    width: 50%;
+    float: left;
+}
+
+.description {
+    padding: 10px;
+}
+
+.search_line {
+    padding-top: 40px;
+}

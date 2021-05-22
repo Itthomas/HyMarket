@@ -1,0 +1,41 @@
+{% load static %}
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'HyMarket\styles.css' %}">
+    <title>HyMarket | {% block title %} title code {% endblock %}</title>
+    {% block JS %}{% endblock %}
+</head>
+<body>
+    <div id="header_box"></div>
+        <header>
+            <nav class="nav_bar">
+                <ul class="nav_list">
+                    <li><a class="nav_anchor" href="http://127.0.0.1:8000/">Home</a></li>
+                    <li><a class="nav_anchor" href="http://127.0.0.1:8000/baazar">Baazar</a></li>
+                    <li><a class="nav_anchor" href="http://127.0.0.1:8000/auctions">Auctions</a></li>
+                </ul>
+            </nav>
+            <h1 class="page_heading">HyMarket</h1>
+            <h4 class="subtitle">A market tracker for Hypixel Skyblock</h4>
+        </header>
+    </div>
+    <main>
+        {% block content %}
+        <p>replace this text</p>
+        {% endblock %}
+    </main>
+    <footer class="foot">
+        <h5 class="created_by">Created by Isaac Thomas | 5/2021</h5>
+        <h6 class="disclaimer">
+            This website is not affiliated with or sponsored by Hypixel, Mojang, or Microsoft. 
+            All assets used on this website are the property of their respective owners
+        </h6>
+        <br>
+    </footer>
+</body>
+</html>

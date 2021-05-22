@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}Baazar | {{item}}{% endblock %}
+
+{% block content %}
+<h1>{{ item|make_pretty }}</h1>
+<h2>Overview:</h2>
+<div class="overview_container">
+    <ul class="product_info_list">
+        <li class="product_info">
+            <span class="value_title">Buy Price:</span>
+            <span class="value">{{ buy_price }}</span>
+        </li>
+        <li class="product_info">
+            Sell Price:
+            <span class="value">{{ sell_price }}</span>
+        </li>
+        <li class="product_info">
+            Buyers:
+            <span class="value">{{ buy_orders }}</span>
+        </li>
+        <li class="product_info">
+            Sellers:
+            <span class="value">{{ sell_orders }}</span>
+        </li>
+        <li class="product_info">
+            Buy Volume:
+            <span class="value">{{ buy_volume }}</span>
+        </li>
+        <li class="product_info">
+            Sell Volume:
+            <span class="value">{{ sell_volume }}</span>
+        </li>
+    </ul>
+</div>
+<div class="orders_container">
+    <div class="orders">
+        <h2>Buy Orders:</h2>
+        <table>
+            <tr class="table_head">
+                <td class="price_row">Price (per unit)</td>
+                <td class="amount_row">Amount</td>
+                <td class="order_row">Number of Orders</td>
+            </tr>
+            {% for order in sell_summary %}
+            <tr>
+                <td class="price_row">{{ order|get_summary_price }}</td>
+                <td class="amount_row">{{ order|get_summary_amount }}</td>
+                <td class="order_row">{{ order|get_summary_orders }}</td>
+            </tr>
+            {% endfor %}
+        </table>  
+    </div>  
+    <div class="orders">
+        <h2>Sell Orders:</h2>
+        <table>
+            <tr class="table_head">
+                <td class="price_row">Price (per unit)</td>
+                <td class="amount_row">Amount</td>
+                <td class="order_row">Number of Orders</td>
+            </tr>
+            {% for order in buy_summary %}
+            <tr>
+                <td class="price_row">{{ order|get_summary_price }}</td>
+                <td class="amount_row">{{ order|get_summary_amount }}</td>
+                <td class="order_row">{{ order|get_summary_orders }}</td>
+            </tr>
+            {% endfor %}
+        </table> 
+    </div> 
+</div>
+{% endblock %}

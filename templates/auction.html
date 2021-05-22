@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}Auction{% endblock %}
+
+{% block JS %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+    
+        $('#button').click(function(e) {  
+            var inputvalue = $("#input").val();
+            window.location.replace(" http://127.0.0.1:8000/auctions/"+inputvalue);
+    
+        });
+    });
+    </script>
+{% endblock %}
+
+{% block content %}
+<h1>Auction</h1>
+<input placeholder="item name (one word)" type="text" id="input">
+<button type="button" id="button">search</button>
+{% if results > 0 %}
+<h4>Showing {{results}} auctions:</h4>
+{% else %}
+<h4>No auctions matched your search.</h4>
+{% endif %}
+<div class="all_items">
+    {% for value in api %}
+    <a style="text-decoration: none;" href="http://127.0.0.1:8000/auctions/"></a>
+        <div class="item_box">
+            <ul class="product_info_list">
+                <li class="product_info item_name">{{ value|get_auction_item }}</li>
+                <li class="product_info">
+                    Highest Bid:
+                    <span class="value">{{ value|get_highest_bid }}</span>
+                </li>
+                <li class="product_info">
+                    Ends In:
+                    <span class="value">{{ value|get_auction_end }}</span>
+                </li>
+                <li class="product_info">
+                    Starting Bid:
+                    <span class="value">{{ value|get_starting_bid }}</span>
+                </li>
+                <li class="product_info">
+                    Bids:
+                    <span class="value">{{ value|get_bids }}</span>
+                </li>
+                <li class="product_info">
+                    Rarity:
+                    <span class="value">{{ value|get_tier }}</span>
+                </li>
+            </ul>
+        </div>
+    </a>    
+    {% endfor %}
+</div>
+{% endblock %}

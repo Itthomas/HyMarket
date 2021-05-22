@@ -1,13 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HyMarket - Home</title>
-</head>
-<body>
-    <h1>Homepage</h1>
-    <p>The homepage will contain all the items in some type of listing or table</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block JS %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+    
+        $('#baazar_button').click(function(e) {  
+            var inputvalue = $("#baazar_input").val();
+            window.location.replace(" http://127.0.0.1:8000/baazar/"+inputvalue);
+    
+        });
+
+        $('#auction_button').click(function(e) {  
+            var inputvalue = $("#auction_input").val();
+            window.location.replace(" http://127.0.0.1:8000/auctions/"+inputvalue);
+    
+        });
+
+    });
+    </script>
+{% endblock %}
+
+{% block content %}
+<h1>Homepage</h1>
+<div class="home_body">
+    <div class="float_child description">
+        <p>Welcome to HyMarket. Use the search-bars to browse real time price data over hundreds of products avalible on the Hypixel skyblock server. You can also use the navigation bar at the top of the screen to view all items in each category.</p>
+    </div>
+    <div class="search_line float_child">
+        <input placeholder="item name (one word)" type="text" id="baazar_input">
+        <button type="button" id="baazar_button">Search the Baazar</button>
+        <br>
+        <br>
+        <input placeholder="item name (one word)" type="text" id="auction_input">
+        <button type="button" id="auction_button">Search the Auctions</button>
+    </div>
+</div>
+
+{% endblock %}
